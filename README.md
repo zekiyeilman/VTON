@@ -32,6 +32,7 @@ app.demo.launch(share=True, debug=True)
 ```
 
 > [!NOTE]
+> - Repo **private** ise Colab Secrets'a `GITHUB_TOKEN` (fine-grained, sadece bu repo, Contents: Read-only) ekleyin; notebook klonlarken onu kullanır. Elle klonlarken: `!git clone https://<TOKEN>@github.com/zekiyeilman/VTON.git /content/VTON`
 > - HD render için Hugging Face token'ını Colab **Secrets** bölümüne `HF_TOKEN` olarak ekleyin. Token'ı koda yazmayın.
 > - "Linkten veri çek" özelliği Colab'de headless Chrome kullanır; notebook'taki 4. hücre Chrome'u kurar.
 
