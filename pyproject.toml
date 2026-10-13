@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vton"
+version = "0.2.0"
+description = "Beden duyarlı sanal giydirme (Size-Aware Virtual Try-On) pipeline'ı"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "opencv-python",
+    # mp.solutions API'si 0.10.31'de kaldırıldı; kod bu API'yi kullanıyor
+    "mediapipe>=0.10.14,<0.10.31",
+    "numpy",
+    "Pillow",
+    "rembg[cpu]",
+    "requests",
+    "torch",
+    "transformers",
+    "gradio",
+    "gradio_client",
+    "selenium",
+]
+
+[project.optional-dependencies]
+render = ["diffusers", "accelerate"]
+ml = ["scikit-learn", "pandas"]
+
+[tool.setuptools.packages.find]
+include = ["vton*"]

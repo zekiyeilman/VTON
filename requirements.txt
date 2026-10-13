@@ -1,8 +1,8 @@
 opencv-python
-mediapipe
+mediapipe>=0.10.14,<0.10.31
 numpy
 Pillow
-rembg
+rembg[cpu]
 requests
 beautifulsoup4
 pandas
@@ -16,6 +16,8 @@ diffusers
 transformers
 accelerate
 gradio
+gradio_client
+selenium
 torch
 torchvision
 scikit-learn

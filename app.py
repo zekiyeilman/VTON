@@ -2,9 +2,14 @@ import gradio as gr
 import os
 import cv2
 import json
-from vton_engine import VTONEngine
-from node_01_segmentation import SegFormerNode
-from scraper_pipeline import vton_otonom_boru_hatti
+from vton import VTONEngine, SegFormerNode, vton_otonom_boru_hatti
+from vton.paths import goruntu
+
+
+def _varsa(yol):
+    """Dosya varsa yolunu, yoksa None döndürür (Gradio varsayılan görselleri için)."""
+    return yol if os.path.exists(yol) else None
+
 
 engine = VTONEngine()
 segformer_node = SegFormerNode()
@@ -67,9 +72,9 @@ def islem_baslat(user_front, user_back, user_side, garment_img, height, chest, w
     
     # Eşleşecek açılar: (User Img, Garment Path, Yön İsmi)
     angles = [
-        (user_front, "goruntu/on.jpg", "Ön"),
-        (user_back, "goruntu/arka.jpg", "Arka"),
-        (user_side, "goruntu/yan.jpg", "Yan")
+        (user_front, goruntu("on.jpg"), "Ön"),
+        (user_back, goruntu("arka.jpg"), "Arka"),
+        (user_side, goruntu("yan.jpg"), "Yan")
     ]
     
     for u_img, g_path, label in angles:
@@ -82,11 +87,11 @@ def islem_baslat(user_front, user_back, user_side, garment_img, height, chest, w
                 continue
                 
             # Kullanıcı fotoğrafını kaydet
-            u_path = f"goruntu/temp_user_{label}.jpg"
+            u_path = goruntu(f"temp_user_{label}.jpg")
             cv2.imwrite(u_path, cv2.cvtColor(u_img, cv2.COLOR_RGB2BGR))
             
             # Kıyafeti ayıkla
-            g_extracted_path = f"goruntu/temp_garment_extracted_{label}.png"
+            g_extracted_path = goruntu(f"temp_garment_extracted_{label}.png")
             cropped_garment, mask = segformer_node.process_image(g_path, garment_type=garment_type)
             
             if cropped_garment is None:
@@ -95,7 +100,7 @@ def islem_baslat(user_front, user_back, user_side, garment_img, height, chest, w
                 
             cv2.imwrite(g_extracted_path, cropped_garment)
             
-            out_name = f"goruntu/temp_result_{label}.jpg"
+            out_name = goruntu(f"temp_result_{label}.jpg")
             
             mesaj = engine.run(
                 user_image_path=u_path,
@@ -149,14 +154,14 @@ with gr.Blocks(title="VTON Beden Duyarlı Sanal Kabin") as demo:
             
             scraper_info = gr.Markdown("Manken ve Beden Tablosu Verileri Burada Gösterilecek...")
             garment_gallery = gr.Gallery(label="Kazınan Ürün Görselleri (Referans, Ön, Arka, Yan)", height=250, columns=4)
-            garment_in = gr.Image(value="goruntu/on.jpg", label="Giydirilecek Kıyafet (Galeriden seçip veya manuel yükleyebilirsiniz)")
+            garment_in = gr.Image(value=_varsa(goruntu("on.jpg")), label="Giydirilecek Kıyafet (Galeriden seçip veya manuel yükleyebilirsiniz)")
             
         with gr.Column(scale=1):
             gr.Markdown("### 2. Kullanıcı Verileri")
             with gr.Row():
-                user_front = gr.Image(value="goruntu/user_on.jpg", label="Senin Ön Fotoğrafın")
-                user_back = gr.Image(value="goruntu/user_arka.jpg", label="Senin Arka Fotoğrafın")
-                user_side = gr.Image(value="goruntu/user_yan.jpg", label="Senin Yan Fotoğrafın")
+                user_front = gr.Image(value=_varsa(goruntu("user_on.jpg")), label="Senin Ön Fotoğrafın")
+                user_back = gr.Image(value=_varsa(goruntu("user_arka.jpg")), label="Senin Arka Fotoğrafın")
+                user_side = gr.Image(value=_varsa(goruntu("user_yan.jpg")), label="Senin Yan Fotoğrafın")
             
             with gr.Row():
                 height_in = gr.Number(value=168.0, label="Boy (cm)")
