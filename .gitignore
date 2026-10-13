@@ -1,0 +1,32 @@
+# Byte-compiled / optimized / URL caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C environments & Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# IDE & Editor settings
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Browser profiles & Scraping sessions
+VTON_Chrome_Profil/
+*.log
+
+# Environment variables & secrets
+.env
+.env.*
+
+# Temporary / intermediate generated artifacts
+goruntu/temp_*
+goruntu/*_Ã–n*
+
+# OS specific files
+.DS_Store
+Thumbs.db

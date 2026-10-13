@@ -1,0 +1,232 @@
+{
+    "trendyolmilla": {
+        "kadin_ust_giyim": {
+            "kategoriler": [
+                "Elbise",
+                "Bluz",
+                "Gömlek",
+                "Tshirt",
+                "Sweatshirt"
+            ],
+            "tablo": {
+                "sutunlar": [
+                    "Beden",
+                    "Göğüs (cm)",
+                    "Bel (cm)",
+                    "Basen (cm)"
+                ],
+                "veriler": [
+                    {
+                        "beden": "XXS/32",
+                        "gogus": [
+                            75,
+                            79
+                        ],
+                        "bel": [
+                            58,
+                            62
+                        ],
+                        "basen": [
+                            84,
+                            88
+                        ]
+                    },
+                    {
+                        "beden": "XS/34",
+                        "gogus": [
+                            79,
+                            83
+                        ],
+                        "bel": [
+                            62,
+                            66
+                        ],
+                        "basen": [
+                            88,
+                            92
+                        ]
+                    },
+                    {
+                        "beden": "S/36",
+                        "gogus": [
+                            83,
+                            87
+                        ],
+                        "bel": [
+                            66,
+                            70
+                        ],
+                        "basen": [
+                            92,
+                            96
+                        ]
+                    },
+                    {
+                        "beden": "M/38",
+                        "gogus": [
+                            87,
+                            91
+                        ],
+                        "bel": [
+                            70,
+                            74
+                        ],
+                        "basen": [
+                            96,
+                            100
+                        ]
+                    },
+                    {
+                        "beden": "L/40",
+                        "gogus": [
+                            91,
+                            96
+                        ],
+                        "bel": [
+                            74,
+                            79
+                        ],
+                        "basen": [
+                            100,
+                            105
+                        ]
+                    },
+                    {
+                        "beden": "XL/42",
+                        "gogus": [
+                            97,
+                            102
+                        ],
+                        "bel": [
+                            80,
+                            85
+                        ],
+                        "basen": [
+                            106,
+                            111
+                        ]
+                    },
+                    {
+                        "beden": "2XL/44",
+                        "gogus": [
+                            102,
+                            108
+                        ],
+                        "bel": [
+                            85,
+                            91
+                        ],
+                        "basen": [
+                            111,
+                            117
+                        ]
+                    },
+                    {
+                        "beden": "3XL/46",
+                        "gogus": [
+                            108,
+                            114
+                        ],
+                        "bel": [
+                            91,
+                            97
+                        ],
+                        "basen": [
+                            117,
+                            123
+                        ]
+                    }
+                ]
+            }
+        },
+        "kadin": {
+            "ust_giyim": {
+                "tablo": {
+                    "sutunlar": [
+                        "Beden",
+                        "Göğüs (cm)",
+                        "Bel (cm)",
+                        "Basen (cm)"
+                    ],
+                    "veriler": [
+                        {
+                            "beden": "XS/34",
+                            "gogus": [
+                                82,
+                                84
+                            ],
+                            "bel": [
+                                64,
+                                66
+                            ],
+                            "basen": [
+                                90,
+                                92
+                            ]
+                        },
+                        {
+                            "beden": "S/36",
+                            "gogus": [
+                                86,
+                                88
+                            ],
+                            "bel": [
+                                68,
+                                70
+                            ],
+                            "basen": [
+                                94,
+                                96
+                            ]
+                        },
+                        {
+                            "beden": "M/38",
+                            "gogus": [
+                                90,
+                                92
+                            ],
+                            "bel": [
+                                72,
+                                74
+                            ],
+                            "basen": [
+                                98,
+                                100
+                            ]
+                        },
+                        {
+                            "beden": "L/40",
+                            "gogus": [
+                                94,
+                                96
+                            ],
+                            "bel": [
+                                76,
+                                78
+                            ],
+                            "basen": [
+                                102,
+                                104
+                            ]
+                        },
+                        {
+                            "beden": "XL/42",
+                            "gogus": [
+                                98,
+                                100
+                            ],
+                            "bel": [
+                                80,
+                                82
+                            ],
+                            "basen": [
+                                106,
+                                108
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}
