@@ -124,6 +124,15 @@ class TrendyolOtonomScraper:
             'manken_ic_bacak': (50.0, 110.0)
         }
 
+        # Sadece "Manken / Model" bağlamındaki metni tara. Aksi halde müşteri
+        # yorumlarındaki "Boy 158 cm Kilo 45 kg" gibi veriler manken ölçüsü sanılıyor.
+        baglam_regex = r'(manken|mankenin|modelin|model\s*(?:ölçü|bilgi|üzerinde|boy))'
+        pencereler = [text[m.start(): m.start() + 250]
+                      for m in re.finditer(baglam_regex, text, re.IGNORECASE)]
+        if not pencereler:
+            return olcumler
+        text = " \n ".join(pencereler)
+
         for key, pattern in patterns.items():
             match = re.search(pattern, text, re.IGNORECASE)
             if match:

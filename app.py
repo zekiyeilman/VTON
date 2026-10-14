@@ -149,7 +149,7 @@ with gr.Blocks(title="VTON Beden Duyarlı Sanal Kabin") as demo:
     with gr.Row():
         with gr.Column(scale=1):
             gr.Markdown("### 1. Ürün Seçimi")
-            url_in = gr.Textbox(value="https://www.trendyol.com/trendyolmilla/antrasit-100-pamuk-oversize-genis-kalip-p-2018925", placeholder="Trendyol Ürün Linki Yapıştırın...", label="Ürün Linki")
+            url_in = gr.Textbox(value="https://www.trendyol-milla.com/trendyolmilla/antrasit-100-pamuk-oversize-genis-kalip-baskili-orme-t-shirt-twoss25ts00148-p-896485014", placeholder="Trendyol Ürün Linki Yapıştırın...", label="Ürün Linki")
             fetch_btn = gr.Button("🔗 Linkten Veri Çek ve Analiz Et", variant="secondary")
             
             scraper_info = gr.Markdown("Manken ve Beden Tablosu Verileri Burada Gösterilecek...")

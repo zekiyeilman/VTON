@@ -1,5 +1,12 @@
 {
-    "kalibrasyon_stratejisi": "[AI] AI Füzyon: Göz(%60) + Yüz Uzunluğu(%40)",
-    "cm_per_pixel": 0.06343,
-    "hesaplanan_omuz_cm": 29.83
+    "kalibrasyon_stratejisi": "[OK] Ground Truth (Manken Boyu: 165.0 cm) -> Piksel Kilitli",
+    "cm_per_pixel": 0.08593,
+    "hesaplanan_omuz_cm": 40.41,
+    "kazilan_gercek_olculer": {
+        "manken_boy": 165.0,
+        "manken_gogus": 80.0,
+        "manken_bel": 68.0,
+        "manken_kalca": 88.0,
+        "urun_on_boy": 66.0
+    }
 }
